@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  * { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.1) transparent; }
+  body { background: #050510; color: #e0e0f0; }
+}
+
+@layer components {
+  .ag-glass {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .ag-glass-hover {
+    background: rgba(255,255,255,0.015);
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: all 0.2s ease;
+  }
+  .ag-glass-hover:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.12);
+  }
+  .ag-glow-text {
+    background: linear-gradient(135deg, #60a5fa, #a78bfa, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .ag-pulse-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    animation: ag-pulse 2s ease-in-out infinite;
+  }
+  .ag-count-up { font-variant-numeric: tabular-nums; }
+}
+
+@layer utilities {
+  .badge { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 999px; letter-spacing: 0.3px; }
+  .badge-insight { background: rgba(59,130,246,0.1); color: #60a5fa; }
+  .badge-preference { background: rgba(168,85,247,0.1); color: #a78bfa; }
+  .badge-pattern { background: rgba(34,197,94,0.1); color: #4ade80; }
+  .badge-correction { background: rgba(245,158,11,0.1); color: #fbbf24; }
+  .badge-decision { background: rgba(6,182,212,0.1); color: #22d3ee; }
+  .badge-technical { background: rgba(52,211,153,0.1); color: #34d399; }
+  .badge-project { background: rgba(139,92,246,0.1); color: #a78bfa; }
+  .badge-behavior { background: rgba(236,72,153,0.1); color: #f472b6; }
+}
+
+@keyframes ag-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
